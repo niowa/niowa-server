@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --watch app --exec node app/server.js --inspect=9222",
     "start": "yarn run up && node app/server.js",
-    "up": "knex-migrate up",
+    "up": "knex migrate:latest",
     "down": "knex-migrate down",
     "rollback": "knex-migrate rollback",
     "down-all": "knex-migrate down --to 0",
