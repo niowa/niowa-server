@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "f000b15b-52df-4387-bd07-80d1adf57e1f",
+		"name": "Variancebeyondi API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "493a6585-63e7-4540-9482-77731eb796fe",
+			"name": "api",
+			"item": [
+				{
+					"_postman_id": "513cdff3-820c-48f2-9b48-760e36eed4b0",
+					"name": "profile",
+					"item": [
+						{
+							"_postman_id": "27511498-2d24-47c0-a7a4-57015ad07265",
+							"name": "Get Profile",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/api/profile",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"_postman_id": "1f938b75-e2b4-4462-8284-12a1d80c6c02",
+							"name": "Create Profile",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a107888d-fb09-466e-88e0-66424fd445fb",
+										"type": "text/javascript",
+										"exec": [
+											"const jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable (\"token\", jsonData.data.token);"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "79245a77-30e1-43f0-a881-f17f8258f21d",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"user\" : {\n    \"email\": \"postman@mail.ru\",\n    \"name\": \"postman\",\n    \"password\": \"postman1\"\n  }\n}"
+								},
+								"url": {
+									"raw": "{{host}}/api/profile",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f689c58a-e836-406d-8134-95bfe630b2ec",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "c10368af-0888-4a43-86e6-7236d48fccb9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "c9bfb4d8-ec87-4596-8533-eab9a90efdb4",
+					"name": "session",
+					"item": [
+						{
+							"_postman_id": "64edc8ac-2ace-4d53-8033-eb57ed0381c9",
+							"name": "Create Session",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7abe4113-22fb-4a22-b42d-922daa6fd0b3",
+										"type": "text/javascript",
+										"exec": [
+											"const jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable (\"token\", jsonData.data.token);"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "9bf979fd-5668-4df0-a746-2bfb649cdaaf",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"user\": {\n    \"email\": \"postman@mail.ru\",\n    \"password\": \"postman1\"\n  }\n}"
+								},
+								"url": {
+									"raw": "{{host}}/api/session",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"session"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "a280cebf-e7b3-473c-a4fb-a2c8cbc1f3cf",
+					"name": "items",
+					"item": [
+						{
+							"_postman_id": "da09d23d-207a-4d3c-86ca-f4e0babe0050",
+							"name": "Get Item",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/api/items/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"items",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"_postman_id": "d91ab21b-083a-43be-9c57-2ee98d2cd08b",
+			"name": "admin",
+			"item": [
+				{
+					"_postman_id": "69983641-744a-4e57-ac8f-1d17cfb0e689",
+					"name": "profile",
+					"item": [
+						{
+							"_postman_id": "5f510d6d-bd90-45db-9fe3-2671c6eae487",
+							"name": "Create Admin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"test@gmail.com\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}/admin/profile",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "f55c1364-c46e-4561-9f35-feaccd4846af",
+					"name": "session",
+					"item": [
+						{
+							"_postman_id": "9186ba0c-2c61-4d13-a4e9-029f6acca239",
+							"name": "Create Session",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7abe4113-22fb-4a22-b42d-922daa6fd0b3",
+										"type": "text/javascript",
+										"exec": [
+											"const jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable (\"token\", jsonData.data.token);"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "9bf979fd-5668-4df0-a746-2bfb649cdaaf",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"user\": {\n    \"email\": \"postman@mail.ru\",\n    \"password\": \"postman1\"\n  }\n}"
+								},
+								"url": {
+									"raw": "{{host}}/admin/session",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"session"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"_postman_id": "1b02f433-1e20-42c1-9c9e-4e68f3dc81e9",
+					"name": "items",
+					"item": [
+						{
+							"_postman_id": "9b40092d-cfae-42bb-9a92-149aeb35187f",
+							"name": "Create Item",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "596e569d-e5f3-4a17-a9d9-2a402b39e533",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "79245a77-30e1-43f0-a881-f17f8258f21d",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-access-token",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"item\" : {\n    \"description\": \"test_item\",\n    \"amount\": 2\n  }\n}"
+								},
+								"url": {
+									"raw": "{{host}}/admin/items",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"items"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3652322c-8500-4a5f-9250-ff761cde3d75",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b472bdb0-7d0e-423b-b819-b7d113c75e35",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

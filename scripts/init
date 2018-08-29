@@ -1,0 +1,7 @@
+#!/bin/bash
+
+./scripts/init_db && ./scripts/init_test_db
+
+rm -rf node_modules;
+yarn;
+yarn up;
